@@ -27,6 +27,12 @@
   display: flex;
   font-weight: $ads-font-weight-third;
   gap: 0.3rem;
+
+  &>* {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .label-icon {
@@ -186,6 +192,7 @@
   .copy-button {
     background: $ads-color-primary;
     color: $ads-background-main;
+    margin: 1rem 0;
   }
 }
 
@@ -293,6 +300,12 @@
   display: flex;
   flex-grow: 1;
   position: relative;
+
+  &>* {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 
   &:disabled {
     cursor: not-allowed;

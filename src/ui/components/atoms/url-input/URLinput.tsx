@@ -1,10 +1,6 @@
 import styles from './URLinput.module.scss';
-import { Icon } from '../../../utils/svg-icons/icons';
+import { Icon } from '../../../utils/vite-svgr/Icon';
 import type { IProps } from './types/IProps';
-import PlanetIcon from '../../../../assets/icons/fi-sr-globe.svg?raw';
-import CloseIcon from '../../../../assets/icons/Close-URL.svg?raw';
-import CopyIcon from '../../../../assets/icons/fi-rr-copy.svg?raw';
-import InfoIcon from '../../../../assets/icons/Info-Tooltip.svg?raw';
 
 function URLInput(props: IProps) {
   const {
@@ -33,21 +29,32 @@ function URLInput(props: IProps) {
 
   return (
     <div className={containerClasses}>
+      {/* Header with label and close icon */}
       <div className={styles.header}>
         <div className={styles['label-wrapper']}>
-          <Icon src={PlanetIcon} className={styles['label-icon']} />
-          <span className={styles['label-text']}>{label}</span>
+          <Icon iconName="fi-sr-globe" className={styles['label-icon']} />
+          <label htmlFor="url-input" className={styles['label-text']}>
+            {label}
+          </label>
         </div>
-        <Icon src={CloseIcon} className={styles['close-icon-url']} />
+        {/* Close button */}
+        {showCloseIcon && (
+          <button aria-label="Cerrar" className={styles['close-button']} onClick={onCloseClick}>
+            <Icon iconName="Close-URL" className={styles['close-icon-url']} />
+          </button>
+        )}
       </div>
+      {/* Input field with protocol and URL */}
       <div className={styles['input-container']}>
         <div className={styles['input-wrapper']}>
-          <Icon src={PlanetIcon} className={styles['planet-icon']} />
+          <Icon iconName="fi-sr-globe" className={styles['planet-icon']} />
           <span className={styles.protocol}>https://</span>
           <span className={styles.divider}>|</span>
+          {/* Input field */}
           <div className={styles['input-group']}>
-            <Icon src={PlanetIcon} className={styles['input-icon']} />
+            <Icon iconName="fi-sr-globe" className={styles['input-icon']} />
             <input
+              id="url-input"
               type="text"
               value={value}
               onChange={(e) => {
@@ -58,32 +65,26 @@ function URLInput(props: IProps) {
               className={styles.input}
             />
           </div>
-
+          {/* Copy button with icon */}
           <button
             className={styles['copy-button']}
             onClick={onCopyClick}
             disabled={variant === 'disabled'}
           >
-            <Icon src={CopyIcon} className={styles['copy-icon']} />
+            <Icon iconName="fi-rr-copy" className={styles['copy-icon']} />
             <span>Copy</span>
           </button>
-
-          {showCloseIcon && (
-            <button aria-label="Cerrar" className={styles['close-button']} onClick={onCloseClick}>
-              <Icon src={CloseIcon} className={styles['close-icon-url']} />
-            </button>
-          )}
         </div>
       </div>
-
+      {/* Footer with hint text and standalone info icon */}
       <div className={styles.footer}>
         {showHintText && (
           <div className={styles['hint-text']}>
-            <Icon src={InfoIcon} className={styles['info-icon']} />
+            <Icon iconName="Info-Tooltip" className={styles['info-icon']} />
             <span className={styles['hint-text']}>{hintText}</span>
           </div>
         )}
-        <Icon src={InfoIcon} className={styles['standalone-info-icon']} />
+        <Icon iconName="Info-Tooltip" className={styles['standalone-info-icon']} />
       </div>
     </div>
   );

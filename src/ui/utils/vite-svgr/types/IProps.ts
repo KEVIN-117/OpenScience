@@ -36,4 +36,8 @@ export type IconName =
   | 'vector'
   | 'volume'
   | 'volumes'
-  | 'whatsapp';
+  | 'whatsapp'
+  | 'fi-sr-globe'
+  | 'Close-URL'
+  | 'fi-rr-copy'
+  | 'Info-Tooltip';
