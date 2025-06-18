@@ -115,7 +115,11 @@ export const StyledContainer = styled(Box)<StyledProps>(({ theme }) => ({
 
 export const UrlInputStyled = styled(StyledContainer)<URLInputStyledProps>(
   ({ theme, variant }) => ({
-    // Global variant styles that affect the entire component
+    width: 'fit-content',
+    [theme.breakpoints.up('xl')]: {
+      minWidth: 0,
+      width: '50%',
+    },
     ...(variant === 'disabled' && {
       color: theme.palette.text.disabled,
     }),

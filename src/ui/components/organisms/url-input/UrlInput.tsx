@@ -42,8 +42,6 @@ export function UrlInput({
   onClose,
   onCopy,
 }: URLInputComponentProps) {
-  // const ref = React.useRef<HTMLInputElement>(null);
-
   const handleOnCopy = () => {
     if (onCopy) {
       onCopy();

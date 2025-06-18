@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from '@mui/material';
+import { Box, darken, styled, Typography } from '@mui/material';
 import { Icon } from '../../../utils/vite-svgr/Icon';
 import type { LabelProps, Size } from './types/IProps';
 
@@ -27,6 +27,8 @@ export const StyledIcon = styled(Icon)<{ iconSize?: Size }>(({ iconSize = 'mediu
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    fill: 'currentColor',
+    color: 'inherit',
 
     '& path': {
       fill: 'currentColor',
@@ -43,7 +45,7 @@ export const Required = styled('span')(({ theme }) => ({
   color: theme.palette.error.main,
 }));
 
-export const LabelUi = styled(Typography)<LabelProps>(({ size = 'medium' }) => {
+export const LabelUi = styled(Typography)<LabelProps>(({ theme, size = 'medium' }) => {
   const sizes = {
     small: '0.75rem',
     medium: '1rem',
@@ -57,6 +59,7 @@ export const LabelUi = styled(Typography)<LabelProps>(({ size = 'medium' }) => {
     justifyContent: 'center',
     gap: '0.3rem',
     fontSize: sizes[size],
-    color: 'inherit',
+    // set color for light and dark mode
+    color: darken(theme.palette.text.primary, 0),
   };
 });

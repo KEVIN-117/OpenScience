@@ -55,7 +55,7 @@ export function Input({
           />
         </StyledInputGroup>
 
-        <ActionButton iconName="fi-rr-copy" onClick={onCopy} variant={variant}>
+        <ActionButton iconName="fi-rr-copy" onClick={onCopy} variant={variant} radius={radius}>
           Copy
         </ActionButton>
       </StyledInputWrapper>

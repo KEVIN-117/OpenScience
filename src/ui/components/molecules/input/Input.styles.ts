@@ -69,8 +69,7 @@ export const StyledInputWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'start',
-  paddingLeft: theme.spacing(2), // 1rem
-  paddingRight: theme.spacing(0.3),
+  padding: theme.spacing(0.5), // 1rem
   gap: theme.spacing(0.5),
 }));
 
