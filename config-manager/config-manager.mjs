@@ -10,11 +10,10 @@ const configSchema = z.object({
   NODE_ENV: z.enum(['dev', 'prod', 'qa']),
 });
 
-const parsed = configSchema.safeParse(process.env);
+const { success, data } = configSchema.safeParse(process.env);
 
-if (!parsed.success) {
-  console.error('Invalid environment variables:', parsed.error.format());
+if (!success) {
   throw new Error('Invalid environment variables');
 }
 
-export const config = parsed.data;
+export const config = data;
