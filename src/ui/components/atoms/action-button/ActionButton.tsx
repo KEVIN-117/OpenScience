@@ -20,6 +20,7 @@ export function ActionButton({
       }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
+      loading={loading}
     >
       <Icon iconName={iconName} />
       <span>{children}</span>

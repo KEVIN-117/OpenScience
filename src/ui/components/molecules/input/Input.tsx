@@ -1,24 +1,13 @@
-import { StyledIcon } from 'ui/components/atoms/label/Label.styles';
 import {
   StyledDivider,
   StyledInputGroup,
   StyledProtocol,
 } from 'ui/components/atoms/base-input/BaseInput.styles';
 import { ActionButton } from 'ui/components/atoms/action-button/ActionButton';
-import React from 'react';
-import { StyledInputContainer, StyledInputWrapper, type URLInputRadius } from './Input.styles';
+import { StyledIcon } from '../../atoms/label/Label.styles';
+import { StyledInputContainer, StyledInputWrapper } from './Input.styles';
 import { Input as BaseInput } from '../../atoms/base-input/BaseInput';
-
-interface UrlInputProps {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-  variant?: 'default' | 'focus' | 'error' | 'disabled';
-  onCopy?: () => void;
-  size?: 'small' | 'medium' | 'large';
-  radius?: URLInputRadius;
-  ref?: React.Ref<HTMLInputElement>;
-}
+import type { UrlInputProps } from './types/IProps';
 
 export function Input({
   value,

@@ -1,8 +1,7 @@
 import { Label } from 'ui/components/atoms/label/Label';
 import { Input } from 'ui/components/molecules/input/Input';
 import { StyledIcon } from 'ui/components/atoms/label/Label.styles';
-// import { Tooltip } from '@mui/material';
-import React from 'react';
+import { type URLInputComponentProps } from './types/IProps';
 import {
   StyledButton,
   StyledFooter,
@@ -10,24 +9,7 @@ import {
   StyledHintText,
   ToolTipButton,
   UrlInputStyled,
-  type URLInputRadius,
-  type URLInputSize,
-  type URLInputVariant,
 } from './UrlInput.styles';
-
-interface URLInputComponentProps {
-  value: string;
-  onChange: (value: string) => void;
-  variant?: URLInputVariant;
-  size?: URLInputSize;
-  radius?: URLInputRadius;
-  label?: string;
-  placeholder?: string;
-  hintText?: string;
-  showCloseButton?: boolean;
-  onClose?: () => void;
-  onCopy?: () => void;
-}
 
 export function UrlInput({
   value,
